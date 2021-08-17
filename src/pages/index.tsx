@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 
 import BookCard from '../components/BookCard'
 import booksApi from '../services/api'
@@ -22,7 +22,9 @@ const Home: React.FC<AdminProps> = ({ServerSideBooks}) => {
   return (
     <Container>
       <h1>Livros</h1>
-      {ServerSideBooks.map(book => <BookCard key={String(book.id)} book={book}/>)}
+      <Row>
+        {ServerSideBooks.map(book => <BookCard key={String(book.id)} book={book}/>)}
+      </Row>
     </Container>
   )
 }
